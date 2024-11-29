@@ -1,0 +1,302 @@
+/* Imports de fontes */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #26333d;
+    --blue: #4a67df;
+    --green: #2fd6cb;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background:
+        url(./img/bg-main.svg),
+        #f8f8f8;
+    background-repeat: no-repeat;
+    background-position: top -30px right -30px;
+    background-size: 450px;
+}
+
+.container_flex {
+    display: flex;
+    align-items: center;
+}
+
+
+/******************* ASIDE *******************/
+.sombra {
+    width: 0;
+    height: 100vh;
+    background-color: #000000a0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+.movimento_sombra {
+    width: 100vw;
+}
+
+.aside {
+    position: relative;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 260px;
+    height: 100vh;
+    padding: 80px 20px 40px;
+    font-size: 14px;
+
+    background-color: #26333d;
+    border-radius: 0 30px 30px 0;
+
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+.aside .botao_menu_retratil {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+
+    background-color: #26333d;
+    color: white;
+    border-radius: 50%;
+
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 22px;
+    padding: 16px;
+    line-height: 14px;
+    cursor: pointer;
+    caret-color: transparent;
+
+    -webkit-transition: rotate 0.4s, ease-in-out 0.4s;
+    -moz-transition: rotate 0.4s, ease-in-out 0.4s;
+    -o-transition: rotate 0.4s, ease-in-out 0.4s;
+    transition: rotate 0.4s, ease-in-out 0.4s;
+}
+
+.aside .aside_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.aside .aside_logo {
+    width: 90px;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+}
+
+.aside .aside_nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.aside .botao_sair:hover svg path,
+.aside .aside_nav .nav_item:hover svg path,
+.aside .aside_nav .nav_item:hover svg g {
+    fill: #2fd6cb;
+}
+
+.aside .botao_sair:hover,
+.aside .aside_nav .nav_item:hover {
+    color: #2fd6cb;
+}
+
+.aside .aside_nav .nav_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px 0;
+
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    -webkit-transition: font-size 0.6s, gap 0.3s;
+    -moz-transition: font-size 0.6s, gap 0.3s;
+    -o-transition: font-size 0.6s, gap 0.3s;
+    transition: font-size 0.6s, gap 0.3s;
+}
+
+.aside .aside_nav .nav_item svg g {
+    fill: white;
+}
+
+.aside .aside_nav .nav_item svg {
+    width: 30px;
+
+    -webkit-transition: margin-left 0.2s ease-in-out 0.2s;
+    -moz-transition: margin-left 0.2s ease-in-out 0.2s;
+    -o-transition: margin-left 0.2s ease-in-out 0.2s;
+    transition: margin-left 0.2s ease-in-out 0.2s;
+}
+
+.nav_item_ativo {
+    border-bottom: 1.5px solid #2fd6cb;
+}
+
+.aside .botao_sair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    -webkit-transition: font-size 0.4s, gap 0.3s;
+    -moz-transition: font-size 0.4s, gap 0.3s;
+    -o-transition: font-size 0.4s, gap 0.3s;
+    transition: font-size 0.4s, gap 0.3s;
+}
+
+.aside .botao_sair svg {
+    width: 40px;
+}
+
+
+/******************* EFEITO DE MINIMIZAR - ASIDE *******************/
+.aside_min {
+    width: 80px;
+}
+
+.aside .botao_menu_retratil_min {
+    right: -12px;
+    rotate: 180deg;
+}
+
+.aside .aside_logo_min {
+    width: 45px;
+}
+
+.aside .aside_nav_min .nav_item {
+    font-size: 0;
+    gap: 0;
+    -webkit-transition: font-size 0.4s, gap 0.3s;
+    -moz-transition: font-size 0.4s, gap 0.3s;
+    -o-transition: font-size 0.4s, gap 0.3s;
+    transition: font-size 0.4s, gap 0.3s;
+}
+
+.aside .aside_nav_min .nav_item svg {
+    margin-left: 5.5px;
+}
+
+.aside .botao_sair-min {
+    font-size: 0;
+    gap: 0;
+}
+
+
+/******************* MAIN *******************/
+.container_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+.main_box_conteudo {
+    /* display: flex; */
+    /* gap: 10px; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    /* justify-content: center; */
+
+    width: 100%;
+    height: 90vh;
+    padding: 30px;
+
+    background-color: #ffffff90;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 35px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+
+    overflow: auto;
+}
+
+.main_box_conteudo h1 {
+    width: 90%;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+/******************* EFEITO DE MINIMIZAR - main *******************/
+.main-min {
+    width: 80%;
+}
+
+
+/******************* MEDIA *******************/
+@media screen and (max-width: 1000px) {
+    .container_main {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .aside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .container_main {
+        width: 90%;
+    }
+
+    .container_main::before {
+        content: "";
+        width: 100px;
+        height: 100vh;
+    }
+}
